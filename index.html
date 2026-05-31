@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter - Elite Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui">
+        <!-- HUD superior -->
+        <div id="hudTop">
+            <div id="scoreBoard">
+                <div class="hud-label">Score</div>
+                <div id="scoreEl" class="hud-value">0</div>
+            </div>
+            <div id="roundBoard">
+                <div class="hud-label">Round</div>
+                <div id="roundEl" class="hud-value">1</div>
+            </div>
+            <div id="healthBoard">
+                <div class="hud-label">Health</div>
+                <div id="healthBar" class="health-bar">
+                    <div id="healthFill" class="health-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instrucciones al inicio -->
+        <div id="instructions">
+            <div class="instructions-container">
+                <h2>CONTROLES</h2>
+                <div class="controls-grid">
+                    <div class="control-group">
+                        <span class="keys">
+                            <span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span>
+                        </span>
+                        <span class="desc">Move</span>
+                    </div>
+                    <div class="control-group">
+                        <span class="keys">
+                            <span class="key">Mouse</span>
+                        </span>
+                        <span class="desc">Aim & Shoot</span>
+                    </div>
+                    <div class="control-group">
+                        <span class="keys">
+                            <span class="key space">Space</span>
+                        </span>
+                        <span class="desc">Shield (4.5s)</span>
+                    </div>
+                    <div class="control-group">
+                        <span class="keys">
+                            <span class="key">Shift</span>
+                        </span>
+                        <span class="desc">Teleport</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Game Over -->
+        <div id="gameOverModal">
+            <div class="modal-content">
+                <h1 id="gameOverTitle">GAME OVER</h1>
+                <div class="modal-stats">
+                    <div class="stat-row">
+                        <span>Final Score</span>
+                        <span id="finalScore">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Rounds Survived</span>
+                        <span id="finalRound">0</span>
+                    </div>
+                </div>
+                <button id="restartBtn">RESTART GAME</button>
+            </div>
+        </div>
+
+        <!-- Indicadores de cooldown -->
+        <div id="cooldownsContainer" class="cooldowns">
+            <div class="cooldown-item">
+                <div class="cooldown-icon">⚔️</div>
+                <div id="shieldCooldown" class="cooldown-bar" style="width: 0%"></div>
+            </div>
+            <div class="cooldown-item">
+                <div class="cooldown-icon">⚡</div>
+                <div id="teleportCooldown" class="cooldown-bar" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
